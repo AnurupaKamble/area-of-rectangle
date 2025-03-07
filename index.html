@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>area of rectangle</title>
+</head>
+<body>
+    <div class="container">
+        <input type="number" placeholder="Enter the length:" class="rect" id="input1">
+        <input type="number" placeholder="Enter the breadth:" class="rect" id="input2">
+        <p id="result">--</p>
+
+        <button class="btn1 btn2" onclick="reset()">Reset</button>
+        <button class="btn1 btn3" onclick="rectangle()">Calculate</button>
+   
+    <script>
+        function rectangle()
+            {
+                const input1Element=document.getElementById("input1");
+                const input2Element=document.getElementById("input2");
+                const resultElement=document.getElementById("result");
+                const num1=input1Element.value;
+
+                if(num1=="")
+                {
+                    alert("please enter the length");
+                    return;
+                } 
+
+                const total = parseInt(input1Element.value)* parseInt(input2Element.value);
+                resultElement.innerText = `Area of rectangle: ${total}`;     
+                console.log(total);
+            }
+            function reset()
+            {
+                const input1Element=document.getElementById("input1");
+                const input2Element=document.getElementById("input2");
+                const resultElement=document.getElementById("result");
+                input1Element.value="";
+                input2Element.value="";
+                resultElement.innerText="--";
+            }
+    </script>
+    </div>
+    <style>
+         .container{
+                background-color: #774926;
+                height: 300px;
+                width: 350px;
+                margin: 30px auto;
+                padding: 10px;
+                border: 1px solid white;
+            }
+            .rect{
+                margin: 10px;
+                display: flex;
+                flex-direction: column;
+                height: 30px;
+                width: 250px;
+                font-size: 20px;
+            }
+            .btn1{
+                margin-top: 40px;
+                padding: 10px;
+                cursor: pointer;
+                height: 40px;
+                width: 100px;
+                color: black;
+                border: 1px solid white;
+                border-radius: 7px;
+            }
+            .btn2{
+                margin-left: 40px;
+                background-color: #96b856;
+            }
+            .btn3{
+                margin-left: 70px;
+                background-color: #5382c4;
+            }
+            #result{
+                text-align: center;
+                font-size: 25px;
+                color: rgb(16, 175, 11);
+            }
+    </style>
+</body>
+</html>
